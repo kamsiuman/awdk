@@ -1,0 +1,4 @@
+Simple Injector v2.3.5
+
+http://simpleinjector.codeplex.com/releases/view/111483
+http://simpleinjector.codeplex.com/downloads/get/723156

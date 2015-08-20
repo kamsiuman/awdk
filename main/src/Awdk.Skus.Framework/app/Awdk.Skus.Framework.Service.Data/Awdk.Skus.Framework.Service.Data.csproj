@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B78266B-6547-4BFF-985D-C34B9453C6F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Awdk.Skus.Framework.Service.Data</RootNamespace>
+    <AssemblyName>Awdk.Skus.Framework.Service.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventService.cs" />
+    <Compile Include="Interface\IEventService.cs" />
+    <Compile Include="SkUserService.cs" />
+    <Compile Include="DataServiceConfig.cs" />
+    <Compile Include="Interface\ISkUserService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Awdk.Skus.Framework.Common\Awdk.Skus.Framework.Common.csproj">
+      <Project>{f4f14c6f-23a2-4af2-a5ae-6cc11bac2d01}</Project>
+      <Name>Awdk.Skus.Framework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Awdk.Skus.Framework.DataAccess.EF\Awdk.Skus.Framework.DataAccess.EF.csproj">
+      <Project>{0159c34b-e711-4313-af26-6177931e9889}</Project>
+      <Name>Awdk.Skus.Framework.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Awdk.Skus.Framework.DataAccess.Repository\Awdk.Skus.Framework.DataAccess.Repository.csproj">
+      <Project>{b82b1592-0e9f-4025-80a1-84eac5d5e8cb}</Project>
+      <Name>Awdk.Skus.Framework.DataAccess.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Awdk.Skus.Framework.Entity.ValueObject\Awdk.Skus.Framework.Entity.ValueObject\Awdk.Skus.Framework.Entity.ValueObject.csproj">
+      <Project>{160cf860-58e5-4366-91fd-6e1dde7018d3}</Project>
+      <Name>Awdk.Skus.Framework.Entity.ValueObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
