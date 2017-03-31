@@ -9,7 +9,6 @@ using System.Web;
 using System.Web.Http.Filters;
 using Awdk.Skus.Framework.Common.CustomException;
 using Newtonsoft.Json;
-using Slb.Studio.Server.Utilities.Validation;
 
 namespace Awdk.Skus.Framework.WebAPI.Filters
 {
@@ -33,7 +32,6 @@ namespace Awdk.Skus.Framework.WebAPI.Filters
 
         public override void OnException(HttpActionExecutedContext context)
         {
-            Elmah.ErrorLog.GetDefault(HttpContext.Current).Log(new Elmah.Error(context.Exception));
             CreateResponse(context);
         }
 
@@ -59,10 +57,6 @@ namespace Awdk.Skus.Framework.WebAPI.Filters
                 },
                 {
                     typeof (ArgumentNullException),
-                    HttpStatusCode.BadRequest
-                },
-                {
-                    typeof (StudioValidationException),
                     HttpStatusCode.BadRequest
                 },
                 {
